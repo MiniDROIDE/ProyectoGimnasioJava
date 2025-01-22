@@ -13,13 +13,20 @@ public class Gimnasio {
         }
     }
 
-    public void registrarUsuario(String usuario) {
-        System.out.println("Usuario " + usuario + " registrado en el gimnasio " + nombre + ".");
+    public void registrarUsuario(String usuario, int edad) {
+        if (edad >= 18) {
+            System.out.println("Usuario " + usuario + " registrado en el gimnasio " + nombre + ".");
+        } else {
+            System.out.println("Lo sentimos, " + usuario + " no puede registrarse porque es menor de edad.");
+        }
     }
 
     public static void main(String[] args) {
         Gimnasio miGimnasio = new Gimnasio("FitLife Gym");
         miGimnasio.mostrarActividades();
-        miGimnasio.registrarUsuario("Juan Perez");
+        
+        // Ejemplo de registro de usuarios
+        miGimnasio.registrarUsuario("Juan Perez", 16); // Menor de edad
+        miGimnasio.registrarUsuario("Maria Gomez", 22); // Mayor de edad
     }
 }
